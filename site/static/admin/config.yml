@@ -9,6 +9,8 @@ collections: # A list of collections the CMS should be able to edit
     label: "Post" # Used in the UI, ie.: "New Post"
     folder: "site/content/post" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
+    widget: "object"
+    collapsed: true
     fields: # The fields each document in this collection have
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
@@ -17,28 +19,31 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Valid From", name: "date", widget: "datetime"}
       - {label: "Valid To", name: "date", widget: "datetime"}
-    - label: "Promotion Settings"
-        name: "promotionsettings"
-        widget: "object"
-        collapsed: true
-        fields: 
-          - label: "Channel", name: "channel", default: ["Both"], widget: "select", 
-              options:
-                - { label: "Desktop", value: "1" }
-                - { label: "Mobile", value: "2" }
-                - { label: "Both", value: "3" } 
-          - label: "Category", name: "category", widget: "select", 
-              options:
-                - { label: "Super Juicy", value: "4" }
-                - { label: "Super Juicy 2", value: "5" }
-                - { label: "Super Juicy 3", value: "6" } 
-          - {label: "Priority", name: "priority", widget: "number", default: 0, valueType: "int", min: 0,  max: 6} 
-          - {label: "Site", name: "site", widget: "select", multiple: true,
-              options:
-                - { label: "Vera&John", value: "100" }
-                - { label: "InterCasino", value: "200" }
-                - { label: "HappyLuke", value: "300" } 
-          - {label: "Type", name: "type", widget: "string"} 
+    label: "Promotion Settings"
+      name: "promotionsettings"
+      widget: "object"
+      collapsed: true
+      fields: 
+        - {label: "Channel", name: "channel", default: ["Both"], widget: "select", 
+            options:
+              - { label: "Desktop", value: "1" }
+              - { label: "Mobile", value: "2" }
+              - { label: "Both", value: "3" } 
+          }
+        - {label: "Category", name: "category", widget: "select", 
+            options:
+              - { label: "Super Juicy", value: "4" }
+              - { label: "Super Juicy 2", value: "5" }
+              - { label: "Super Juicy 3", value: "6" }
+          } 
+        - {label: "Priority", name: "priority", widget: "number", default: 0, valueType: "int", min: 0,  max: 6} 
+        - {label: "Site", name: "site", widget: "select", multiple: true,
+            options:
+              - { label: "Vera&John", value: "100" }
+              - { label: "InterCasino", value: "200" }
+              - { label: "HappyLuke", value: "300" } 
+          }
+        - {label: "Type", name: "type", widget: "string"} 
     
   - name: "pages"
     label: "Pages"
