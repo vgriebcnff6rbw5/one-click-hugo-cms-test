@@ -18,6 +18,13 @@ collections: # A list of collections the CMS should be able to edit
         fields:
           - {label: Name, name: name, widget: string, default: "Emmet"}
           - {label: Avatar, name: avatar, widget: image}
+      - {label: Internal Title, name: Internal Title, widget: string}
+      - label: Promotion Settings
+        name: promotionsettings
+        widget: object
+        fields:
+          - {label: Channel, name: channel, widget: string}
+          - {label: Category, name: category, widget: string}
     
   - name: "pages"
     label: "Pages"
