@@ -23,7 +23,7 @@ collections: # A list of collections the CMS should be able to edit
         name: promotionsettings
         widget: object
         fields:
-          - {label: Channel, name: channel, widget: string}
+          - {label: Channel, name: channel, widget: select, options: ["desktop", "mobile", "both"]}
           - {label: Category, name: category, widget: string}
     
   - name: "pages"
